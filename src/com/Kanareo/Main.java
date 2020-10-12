@@ -5,30 +5,34 @@ import java.util.Random;
 public class Main {
 
     public static void main(String[] args){
-                System.out.println("Pio Game");
 
-                Random dice = new Random();
+        System.out.println("Pio Game");
 
-                int computerValue;
-                int playerValue;
-                int round = 0;
+        Random dice = new Random();
+        Player player = new Player();
 
-                while(true) {
-                    round++;
-                    System.out.println("Round: " + round);
+        player.setName("Ziutek");
 
-                    computerValue = dice.nextInt(6)+1;
-                    playerValue = dice.nextInt(6)+1;
-                    if(playerValue == computerValue) {
-                        System.out.println("Computer Value: " + computerValue + " Player Value: " + playerValue);
-                        System.out.println("Win!" + "\n");
-                        break;
-                    }
-                    else {
-                        System.out.println("Computer Value: " + computerValue + " Player Value: " + playerValue);
-                        System.out.println("Loose, try again" + "\n");
-                    }
-                }
+        int computerValue;
+        int playerValue;
+        int round = 0;
+
+        while(true) {
+            round++;
+            System.out.println("Round: " + round);
+
+            computerValue = dice.nextInt(6)+1;
+            playerValue = player.rolled();
+            if(playerValue == computerValue) {
+                System.out.println("Computer Value: " + computerValue + " " + player.getName() + " Value: " + playerValue);
+                System.out.println("Win!" + "\n");
+                break;
+            }
+            else {
+                System.out.println("Computer Value: " + computerValue + " " + player.getName() + " Value: " + playerValue);
+                System.out.println("Loose, try again" + "\n");
+            }
+        }
     }
 
 }
