@@ -12,7 +12,12 @@ public class Player {
     }
 
     public void setName(String name) {
-        this.name = name;
+        if(name != null && !name.isEmpty()){
+            this.name = name;
+        }
+        else {
+            System.err.println("Invalid name!");
+        }
     }
 
     public String getName() {
