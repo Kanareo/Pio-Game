@@ -9,9 +9,8 @@ public class Main {
         System.out.println("Pio Game");
 
         Random dice = new Random();
-        Player player = new Player();
+        Player player = new Player("Ziutek");
 
-        player.setName("Ziutek");
 
         int computerValue;
         int playerValue;
