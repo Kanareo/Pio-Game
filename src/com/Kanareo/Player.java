@@ -2,10 +2,9 @@ package com.Kanareo;
 
 import java.util.Random;
 
-public class Player {
+public abstract class Player {
 
     private String name = "Default User";
-    private Random roll = new Random();
 
     public Player() {}
 
@@ -13,11 +12,9 @@ public class Player {
         setName(name);
     }
 
-    public int rolled() {
-        return roll.nextInt(6) + 1;
-    }
+    public abstract int rolled();
 
-    public void setName(String name) {
+    public final void setName(String name) {
         if(name != null && !name.isEmpty()){
             this.name = name;
         }
@@ -26,7 +23,7 @@ public class Player {
         }
     }
 
-    public String getName() {
+    public final String getName() {
         return name;
     }
 

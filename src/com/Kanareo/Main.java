@@ -9,7 +9,16 @@ public class Main {
         System.out.println("Pio Game");
 
         Random dice = new Random();
-        Player player = new Player("Ziutek");
+        Player player;
+        if(false) {
+            player = new PlayerComp();
+        }
+        else {
+            player = new PlayerHuman();
+        }
+
+        //Player player = new PlayerHuman();
+        //Player player = new Player("Ziutek");
 
 
         int computerValue;
