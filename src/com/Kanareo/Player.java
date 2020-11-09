@@ -1,7 +1,5 @@
 package com.Kanareo;
 
-import java.util.Random;
-
 public abstract class Player {
 
     private String name = "Default User";
@@ -15,11 +13,11 @@ public abstract class Player {
     public abstract int rolled();
 
     public final void setName(String name) {
-        if(name != null && !name.isEmpty()){
+        if(name != null && name.matches("^[a-zA-Z0-9\\-_]{5,}$")){
             this.name = name;
         }
         else {
-            System.err.println("Invalid name!");
+            throw new IllegalArgumentException("Invalid name!");
         }
     }
 

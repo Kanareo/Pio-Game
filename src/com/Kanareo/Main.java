@@ -10,11 +10,17 @@ public class Main {
 
         Random dice = new Random();
         Player player;
-        if(false) {
+        if(true) {
             player = new PlayerComp();
         }
         else {
             player = new PlayerHuman();
+        }
+
+        try {
+            player.setName(null);
+        } catch (IllegalArgumentException ex) {
+            System.err.println("ERROR! " + ex.getMessage());
         }
 
         //Player player = new PlayerHuman();
