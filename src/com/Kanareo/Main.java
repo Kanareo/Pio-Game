@@ -1,52 +1,30 @@
 package com.Kanareo;
 
-import java.util.Random;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Main {
 
     public static void main(String[] args){
 
-        System.out.println("Pio Game");
+        Game game = new Game();
 
-        Random dice = new Random();
-        Player player;
-        if(true) {
-            player = new PlayerComp();
-        }
-        else {
-            player = new PlayerHuman();
-        }
+        List<String> list = new ArrayList();
+        list.add("jeden");
+        list.add("dwa");
+        list.add("trzy");
+        list.add("cztery");
+        list.add("piec");
 
-        try {
-            player.setName(null);
-        } catch (IllegalArgumentException ex) {
-            System.err.println("ERROR! " + ex.getMessage());
+        for (String s : list) {
+            System.out.println(s);
         }
 
-        //Player player = new PlayerHuman();
-        //Player player = new Player("Ziutek");
+        /*Player player = new PlayerComp("Computer");
+        game.addPlayer(player);
 
+        game.play();*/
 
-        int computerValue;
-        int playerValue;
-        int round = 0;
-
-        while(true) {
-            round++;
-            System.out.println("Round: " + round);
-
-            computerValue = dice.nextInt(6)+1;
-            playerValue = player.rolled();
-            if(playerValue == computerValue) {
-                System.out.println("Computer Value: " + computerValue + " " + player.getName() + " Value: " + playerValue);
-                System.out.println("Win!" + "\n");
-                break;
-            }
-            else {
-                System.out.println("Computer Value: " + computerValue + " " + player.getName() + " Value: " + playerValue);
-                System.out.println("Loose, try again" + "\n");
-            }
-        }
     }
 
 }
