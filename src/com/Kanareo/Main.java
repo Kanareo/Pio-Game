@@ -10,20 +10,10 @@ public class Main {
         Game game = new Game();
 
         List<String> list = new ArrayList();
-        list.add("jeden");
-        list.add("dwa");
-        list.add("trzy");
-        list.add("cztery");
-        list.add("piec");
+        game.addPlayer(new PlayerComp("Bottt1"));
+        game.addPlayer(new PlayerComp("Bottt2"));
 
-        for (String s : list) {
-            System.out.println(s);
-        }
-
-        /*Player player = new PlayerComp("Computer");
-        game.addPlayer(player);
-
-        game.play();*/
+        game.play();
 
     }
 
